@@ -6,6 +6,7 @@ import './Person.css'
 // }
 
 const person = (props) => {
+    
     return (
         <div className='Person' >
             <span onClick={props.click}>Delete</span>
@@ -16,4 +17,4 @@ const person = (props) => {
     )
 }
 
-export default person
+export default person;
