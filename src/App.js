@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person'
 // import Radium, { StyleRoot } from 'radium';
+
 
 class App extends Component {
   state = {
@@ -50,22 +51,23 @@ class App extends Component {
   }
 
   render() {
-    const style={
-      backgroundColor: 'green',
-      color: 'white',
-      border:0,
-      fontSize:16,
-      padding:32,
-      marginBottom:16,
-      display: 'inline-block',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black',
-      }
-    }
+    // const style={
+    //   backgroundColor: 'green',
+    //   color: 'white',
+    //   border:0,
+    //   fontSize:16,
+    //   padding:32,
+    //   marginBottom:16,
+    //   display: 'inline-block',
+    //   cursor: 'pointer',
+    //   ':hover': {
+    //     backgroundColor: 'lightgreen',
+    //     color: 'black',
+    //   }
+    // }
 
     let persons = null;
+    let btnClass = '';
 
     if (this.state.showPersons) {
       persons = (
@@ -83,29 +85,31 @@ class App extends Component {
         </div>
       );
 
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'salmon',
-        color: 'black'
-      }
+      btnClass = classes.Red;
+
+      // style.backgroundColor = 'red';
+      // style[':hover'] = {
+      //   backgroundColor: 'salmon',
+      //   color: 'black'
+      // }
     }
 
-    let classes = [];
+    let assignClasses = [];
     if (this.state.persons.length <= 2) {
-      classes.push('red');
+      assignClasses.push(classes.red);
     }
     if (this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignClasses.push(classes.bold);
     }
 
     return (
-        <div className="App">
+        <div className={classes.App}>
           <h1>Start React App</h1>
-          <p className={classes.join(' ')}>This is realy working!</p>
+          <p className={assignClasses.join(' ')}>This is realy working!</p>
           <button 
-            style={style}
+            className={btnClass}
             onClick={this.togglePersonsHandler}>toggle persons</button>
-          {persons}
+          {persons} 
         </div>
     );
     // return React.createElement('div', null, 'h1', 'reat app start')
