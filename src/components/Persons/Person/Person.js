@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classes from './Person.css'
-import Aux from '../../../hoc/aux'
+import Aux from '../../../hoc/AuxContainer'
 import withClass from '../../../hoc/withClass'
 import PropTypes from 'prop-types'
 

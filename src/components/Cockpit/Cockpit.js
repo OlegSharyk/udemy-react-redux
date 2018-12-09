@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import classes from './Cockpit.css'
-import Aux from '../../hoc/aux'
+import Aux from '../../hoc/AuxContainer'
 
 const Cockpit = props => {
     let assignClasses = []

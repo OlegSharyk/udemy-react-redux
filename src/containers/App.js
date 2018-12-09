@@ -4,7 +4,7 @@ import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 // import Radium, { StyleRoot } from 'radium';
 
-import Aux from '../hoc/aux'
+import Aux from '../hoc/AuxContainer'
 import withClass from '../hoc/withClass'
 
 export const AuthContext = React.createContext(false)
